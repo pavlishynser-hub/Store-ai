@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CartLink } from "./CartLink";
 
 export function Header() {
   return (
@@ -9,18 +8,15 @@ export function Header() {
           href="/"
           className="text-xl font-semibold tracking-tight text-primary md:text-2xl"
         >
-          Aurora Cosmetics
+            Aurora Beauty
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
           <Link href="/" className="transition hover:text-primary">
-            Home
+            Головна
           </Link>
           <Link href="/products" className="transition hover:text-primary">
-            Products
-          </Link>
-          <Link href="/checkout" className="transition hover:text-primary">
-            Checkout
+            Каталог
           </Link>
         </nav>
 
@@ -29,9 +25,8 @@ export function Header() {
             href="/products"
             className="rounded-full border border-accent-dark px-4 py-2 text-sm font-medium text-primary transition hover:-translate-y-0.5 hover:bg-accent"
           >
-            Shop
+            Перейти до каталогу
           </Link>
-          <CartLink />
         </div>
       </div>
     </header>

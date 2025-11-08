@@ -14,7 +14,7 @@ function getFormatter(locale: string, currency: string) {
       new Intl.NumberFormat(locale, {
         style: "currency",
         currency,
-        minimumFractionDigits: 2,
+        minimumFractionDigits: 0,
       }),
     );
   }
@@ -24,10 +24,10 @@ function getFormatter(locale: string, currency: string) {
 
 export function Price({
   amount,
-  currency = "USD",
+  currency = "UAH",
   className = "",
 }: PriceProps) {
-  const formatter = getFormatter("en-US", currency);
+  const formatter = getFormatter("uk-UA", currency);
 
   return (
     <span className={`font-semibold tracking-tight ${className}`}>

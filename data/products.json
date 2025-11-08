@@ -1,73 +1,68 @@
 [
   {
-    "id": "allies-of-skin-molecular-barrier-recovery-cream",
-    "brand": "Allies of Skin",
-    "name": "Molecular Barrier Recovery Cream Balm",
-    "price": 76,
-    "currency": "USD",
-    "size": "50 ml",
-    "shortDescription": "Restorative ceramide-rich treatment that supports a resilient skin barrier.",
-    "description": "A nourishing treatment balm infused with ceramides, niacinamide, and a reparative peptide complex to cocoon stressed complexions. It melts into the skin to soothe irritation, reinforce the moisture barrier, and leave the complexion supple and calm.",
-    "ingredients": [
-      "Ceramide Complex",
-      "Niacinamide",
-      "Mushroom Beta-Glucan",
-      "Tripeptide-1",
-      "Hyaluronic Acid"
+    "id": "glow-serum-vitamin-c",
+    "name": "Освітлююча сироватка з вітаміном С",
+    "brand": "Aurum Lab",
+    "price": 1899,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1612817159949-195b6eb01f04?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1612817159949-195b6eb01f04?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80"
     ],
-    "usage": "Warm a pea-sized amount between fingertips and press into clean skin as the final step of your evening routine, or whenever skin needs extra comfort.",
-    "images": [
-      "https://images.unsplash.com/photo-1612810806695-30ba0cb9b0bf?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1600180758890-6ff8a6ad5cb9?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1562240020-ce31ccb0fa6d?auto=format&fit=crop&w=900&q=80"
+    "promLink": "https://prom.ua/p123456789-osvityuyucha-sirovatka",
+    "shortDescription": "Щоденна сироватка з 15% вітаміном С для сяйва та рівного тону.",
+    "description": "Сироватка з стабільним вітаміном С, феруловою кислотою та гіалуроновим комплексом вирівнює тон шкіри, освітлює пігментацію та повертає природний блиск.",
+    "benefits": [
+      "Вирівнює тон та бореться з пігментацією",
+      "Підсилює синтез колагену",
+      "Захищає від вільних радикалів"
     ],
+    "usage": "Наносьте 5 крапель вранці на чисту шкіру перед кремом та SPF.",
     "isFeatured": true
   },
   {
-    "id": "medik8-crystal-retinal-10-serum",
-    "brand": "Medik8",
-    "name": "Crystal Retinal 10 Serum",
-    "price": 125,
-    "currency": "USD",
-    "size": "30 ml",
-    "shortDescription": "High-strength retinal night serum that visibly softens fine lines and clarifies the complexion.",
-    "description": "Medik8's Crystal Retinal 10 delivers clinical-strength retinaldehyde to revitalise dull, uneven skin tones. Stabilised with Medik8's Crystal Retinal technology and balanced by hydrating hyaluronic acid, it refines texture while supporting skin clarity.",
-    "ingredients": [
-      "Retinaldehyde",
-      "Vitamin E",
-      "Hyaluronic Acid",
-      "Glycerin",
-      "Avocado Oil"
-    ],
-    "usage": "Evenings only. After cleansing, apply a small amount across the face and neck, avoiding the eye area. Follow with moisturiser. Introduce gradually 2-3 times per week before building to nightly use.",
-    "images": [
-      "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1505575967455-40e256f73376?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1570082696830-05c9be5c73d8?auto=format&fit=crop&w=900&q=80"
-    ],
-    "isFeatured": true
-  },
-  {
-    "id": "allies-of-skin-triple-hyaluronic-hydration-serum",
-    "brand": "Allies of Skin",
-    "name": "Triple Hyaluronic Antioxidant Hydration Serum",
-    "price": 88,
-    "currency": "USD",
-    "size": "30 ml",
-    "shortDescription": "Weightless daily serum with three molecular weights of hyaluronic acid for lasting hydration.",
-    "description": "This daily hydration serum bathes skin in layered moisture while fortifying with antioxidants and peptides. Three forms of hyaluronic acid work alongside silk amino acids and superoxide dismutase to plump, smooth, and protect against environmental stressors.",
-    "ingredients": [
-      "Low-Molecular Hyaluronic Acid",
-      "Sodium PCA",
-      "Superoxide Dismutase",
-      "Silk Amino Acids",
-      "Niacinamide"
-    ],
-    "usage": "Apply 1-2 pumps to damp skin after cleansing and before moisturiser, both morning and evening.",
-    "images": [
+    "id": "ceramide-barrier-cream",
+    "name": "Відновлювальний крем з церамідами",
+    "brand": "Nordic Skin",
+    "price": 1490,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1586495578044-4413f21062fa?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
       "https://images.unsplash.com/photo-1586495578044-4413f21062fa?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"
+      "https://images.unsplash.com/photo-1600180758890-6ff8a6ad5cb9?auto=format&fit=crop&w=900&q=80"
     ],
+    "promLink": "https://prom.ua/p987654321-ceramide-barrier-cream",
+    "shortDescription": "Заспокійливий крем-бальзам для відновлення бар'єру та комфорту.",
+    "description": "Щільний, але невагомий крем з церамідами, жирними кислотами та ніацинамідом миттєво знімає стягнутість, зменшує почервоніння та зміцнює захисний бар'єр.",
+    "benefits": [
+      "Миттєво зволожує та живить",
+      "Підтримує мікробіом шкіри",
+      "Підходить для чутливої шкіри та після процедур"
+    ],
+    "usage": "Наносьте ввечері та за потреби вранці після сироваток. Можна використовувати як SOS-маску.",
+    "isFeatured": true
+  },
+  {
+    "id": "retinal-night-treatment",
+    "name": "Нічний ретинальний концентрат 0.05%",
+    "brand": "DermAct",
+    "price": 2140,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1570082696830-05c9be5c73d8?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1570082696830-05c9be5c73d8?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1505575967455-40e256f73376?auto=format&fit=crop&w=900&q=80"
+    ],
+    "promLink": "https://prom.ua/p192837465-retinal-night-treatment",
+    "shortDescription": "Активний догляд для підтягнутості та чистоти шкіри без подразнення.",
+    "description": "Концентрат з ретиналем 0.05%, ніацинамідом та скваланом прискорює оновлення клітин, розгладжує текстуру та мінімізує висипання.",
+    "benefits": [
+      "Зменшує зморшки та покращує еластичність",
+      "Контролює висипання та себум",
+      "Не пересушує завдяки екстракту центели та сквалану"
+    ],
+    "usage": "Використовуйте 2-3 рази на тиждень ввечері після очищення. Обов'язково наносіть SPF вранці.",
     "isFeatured": false
   }
 ]

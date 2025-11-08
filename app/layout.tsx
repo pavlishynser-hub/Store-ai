@@ -16,31 +16,31 @@ const geistMono = localFont({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aurora-cosmetics.example";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aurorabeauty.example";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Aurora Cosmetics | Modern Skincare Rituals",
-    template: "%s | Aurora Cosmetics",
+    default: "Aurora Beauty | Український магазин косметики",
+    template: "%s | Aurora Beauty",
   },
   description:
-    "Discover curated Allies of Skin and Medik8 treatments designed to nurture radiant, resilient complexions. Shop modern skincare rituals with effortless checkout.",
+    "Український інтернет-магазин Aurora Beauty: професійний догляд, сироватки та креми з доставкою по Україні.",
   keywords: [
-    "cosmetics",
-    "skincare",
-    "Allies of Skin",
-    "Medik8",
-    "retinal",
-    "hyaluronic serum",
+    "косметика",
+    "український магазин косметики",
+    "догляд за шкірою",
+    "сироватки",
+    "крем для обличчя",
+    "prom.ua косметика",
   ],
   openGraph: {
-    title: "Aurora Cosmetics | Modern Skincare Rituals",
+    title: "Aurora Beauty | Український магазин косметики",
     description:
-      "Curated Allies of Skin and Medik8 essentials for luminous, resilient skin. Explore our hero treatments and checkout securely with Stripe.",
+      "Обирайте сертифіковану доглядову косметику від Aurora Beauty та оформлюйте замовлення через Prom.ua.",
     url: siteUrl,
-    siteName: "Aurora Cosmetics",
-    locale: "en_US",
+    siteName: "Aurora Beauty",
+    locale: "uk_UA",
     type: "website",
     images: [
       {
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aurora Cosmetics | Modern Skincare Rituals",
+    title: "Aurora Beauty | Український магазин косметики",
     description:
-      "Discover Allies of Skin and Medik8 bestsellers. Hydrating serums, retinal treatments, and barrier balms delivered to your door.",
+      "Професійний догляд за шкірою, найкращі сироватки та креми — замовляйте онлайн та отримуйте через Prom.ua.",
   },
   robots: {
     index: true,

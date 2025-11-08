@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProductGrid } from "@/components/ProductGrid";
-import { AddToCartButton } from "@/components/AddToCartButton";
 import { Price } from "@/components/Price";
 import { getFeaturedProducts, getProducts } from "@/lib/products";
 
@@ -18,29 +17,36 @@ export default function Home() {
           <div className="container grid gap-12 py-20 md:grid-cols-2 md:items-center md:py-24">
             <div className="space-y-6">
               <span className="inline-flex items-center rounded-full bg-black text-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em]">
-                New Arrival
+                Новинка
               </span>
               <h1 className="text-4xl font-semibold tracking-tight text-primary md:text-5xl">
-                Barrier-strength skincare for luminous, resilient skin.
+                Професійний догляд для сяйва та здорової шкіри.
               </h1>
               <p className="max-w-lg text-lg text-slate-500">
-                Indulge in cosmeceutical formulas from Allies of Skin and Medik8.
-                Build an effortless ritual curated for glow, balance, and calm.
+                Aurora Beauty пропонує сертифіковані засоби зі зваженою дією активів,
+                щоб ваша рутина працювала на результат щодня.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <AddToCartButton product={heroProduct} className="px-6" />
+                <a
+                  href={heroProduct.promLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="buy-button px-6"
+                >
+                  Купити на Prom.ua
+                </a>
                 <Link
                   href="/products"
                   className="inline-flex items-center gap-2 rounded-full border border-accent-dark px-5 py-2.5 text-sm font-medium text-primary transition hover:-translate-y-0.5 hover:bg-accent"
                 >
-                  Explore the collection
+                  Переглянути каталог
                   <span aria-hidden>&rarr;</span>
                 </Link>
               </div>
               <div className="flex items-center gap-4 rounded-3xl border border-accent-dark/50 bg-white/60 p-4 backdrop-blur">
                 <div className="shrink-0">
                   <Image
-                    src={heroProduct.images[0]}
+                    src={heroProduct.image}
                     alt={heroProduct.name}
                     width={80}
                     height={80}
@@ -49,7 +55,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
-                    Hero Treatment
+                    Хіт продажу
                   </p>
                   <p className="text-lg font-semibold text-primary">
                     {heroProduct.name}
@@ -62,7 +68,7 @@ export default function Home() {
               <div className="absolute -inset-12 hidden rounded-full bg-accent/60 blur-3xl md:block" />
               <div className="relative overflow-hidden rounded-[2.5rem] border border-accent-dark/40 bg-white shadow-soft">
                 <Image
-                  src={heroProduct.images[0]}
+                    src={heroProduct.image}
                   alt={heroProduct.name}
                   width={640}
                   height={800}
@@ -78,15 +84,15 @@ export default function Home() {
       {supportingProducts.length > 0 && (
         <ProductGrid
           products={supportingProducts}
-          title="Featured Treatments"
-          subtitle="Clinically proven actives to elevate your daily ritual."
+          title="Рекомендації б'юті-редактора"
+          subtitle="Комплексні рішення для сяйва, зволоження та захисту."
         />
       )}
 
       <ProductGrid
         products={allProducts}
-        title="Shop the edit"
-        subtitle="Meticulously formulated skincare, selected for performance and pleasure."
+        title="Каталог Aurora Beauty"
+        subtitle="Професійні засоби з активними інгредієнтами, доступні для замовлення на Prom.ua."
       />
     </>
   );

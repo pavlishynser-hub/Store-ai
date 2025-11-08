@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { AddToCartButton } from "@/components/AddToCartButton";
 import { Price } from "@/components/Price";
 import { getProductById, getProductIds } from "@/lib/products";
 
@@ -20,17 +19,20 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
 
   if (!product) {
     return {
-      title: "Product Not Found",
+      title: "Товар не знайдено",
     };
   }
 
+  const description = product.shortDescription ?? product.description;
+  const gallery = product.gallery ?? (product.image ? [product.image] : []);
+
   return {
     title: product.name,
-    description: product.shortDescription,
+    description: description,
     openGraph: {
       title: product.name,
-      description: product.shortDescription,
-      images: product.images.map((url) => ({
+      description: description,
+      images: gallery.map((url) => ({
         url,
         width: 1200,
         height: 630,
@@ -39,7 +41,7 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
     twitter: {
       card: "summary_large_image",
       title: product.name,
-      description: product.shortDescription,
+      description: description,
     },
   };
 }
@@ -51,7 +53,8 @@ export default function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const [primaryImage, ...secondaryImages] = product.images;
+  const gallery = product.gallery ?? (product.image ? [product.image] : []);
+  const [primaryImage, ...secondaryImages] = gallery;
 
   return (
     <div className="border-b border-accent-dark/60 bg-white">
@@ -98,36 +101,46 @@ export default function ProductPage({ params }: ProductPageProps) {
             </h1>
             <div className="flex items-center gap-3">
               <Price amount={product.price} currency={product.currency} />
-              <span className="rounded-full border border-accent-dark/60 px-3 py-1 text-xs font-medium text-slate-500">
-                {product.size}
-              </span>
             </div>
           </div>
 
-          <p className="text-base text-slate-600">{product.description}</p>
+            {product.description && (
+              <p className="text-base text-slate-600">{product.description}</p>
+            )}
 
-          <div className="space-y-4 rounded-3xl border border-accent-dark/50 bg-accent px-6 py-5">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Ingredients
-            </h2>
-            <ul className="space-y-2 text-sm text-slate-600">
-              {product.ingredients.map((ingredient) => (
-                <li key={ingredient} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  {ingredient}
-                </li>
-              ))}
-            </ul>
-          </div>
+            {product.benefits && product.benefits.length > 0 && (
+              <div className="space-y-4 rounded-3xl border border-accent-dark/50 bg-accent px-6 py-5">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                  Переваги
+                </h2>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  {product.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-          <div className="space-y-3 rounded-3xl border border-accent-dark/40 bg-white px-6 py-5 shadow-soft">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-              How to use
-            </h2>
-            <p className="text-sm text-slate-600">{product.usage}</p>
-          </div>
+            {product.usage && (
+              <div className="space-y-3 rounded-3xl border border-accent-dark/40 bg-white px-6 py-5 shadow-soft">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                  Як використовувати
+                </h2>
+                <p className="text-sm text-slate-600">{product.usage}</p>
+              </div>
+            )}
 
-          <AddToCartButton product={product} className="w-full md:w-auto" />
+            <a
+              href={product.promLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="buy-button w-full md:w-auto"
+            >
+              Купити на Prom.ua
+            </a>
         </div>
       </div>
     </div>
