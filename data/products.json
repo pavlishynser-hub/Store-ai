@@ -1,0 +1,68 @@
+[
+  {
+    "id": "glow-serum-vitamin-c",
+    "name": "Освітлююча сироватка з вітаміном С",
+    "brand": "Aurum Lab",
+    "price": 1899,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1612817159949-195b6eb01f04?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1612817159949-195b6eb01f04?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80"
+    ],
+    "promLink": "https://prom.ua/p123456789-osvityuyucha-sirovatka",
+    "shortDescription": "Щоденна сироватка з 15% вітаміном С для сяйва та рівного тону.",
+    "description": "Сироватка з стабільним вітаміном С, феруловою кислотою та гіалуроновим комплексом вирівнює тон шкіри, освітлює пігментацію та повертає природний блиск.",
+    "benefits": [
+      "Вирівнює тон та бореться з пігментацією",
+      "Підсилює синтез колагену",
+      "Захищає від вільних радикалів"
+    ],
+    "usage": "Наносьте 5 крапель вранці на чисту шкіру перед кремом та SPF.",
+    "isFeatured": true
+  },
+  {
+    "id": "ceramide-barrier-cream",
+    "name": "Відновлювальний крем з церамідами",
+    "brand": "Nordic Skin",
+    "price": 1490,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1586495578044-4413f21062fa?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1586495578044-4413f21062fa?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1600180758890-6ff8a6ad5cb9?auto=format&fit=crop&w=900&q=80"
+    ],
+    "promLink": "https://prom.ua/p987654321-ceramide-barrier-cream",
+    "shortDescription": "Заспокійливий крем-бальзам для відновлення бар'єру та комфорту.",
+    "description": "Щільний, але невагомий крем з церамідами, жирними кислотами та ніацинамідом миттєво знімає стягнутість, зменшує почервоніння та зміцнює захисний бар'єр.",
+    "benefits": [
+      "Миттєво зволожує та живить",
+      "Підтримує мікробіом шкіри",
+      "Підходить для чутливої шкіри та після процедур"
+    ],
+    "usage": "Наносьте ввечері та за потреби вранці після сироваток. Можна використовувати як SOS-маску.",
+    "isFeatured": true
+  },
+  {
+    "id": "retinal-night-treatment",
+    "name": "Нічний ретинальний концентрат 0.05%",
+    "brand": "DermAct",
+    "price": 2140,
+    "currency": "UAH",
+    "image": "https://images.unsplash.com/photo-1570082696830-05c9be5c73d8?auto=format&fit=crop&w=900&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1570082696830-05c9be5c73d8?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1505575967455-40e256f73376?auto=format&fit=crop&w=900&q=80"
+    ],
+    "promLink": "https://prom.ua/p192837465-retinal-night-treatment",
+    "shortDescription": "Активний догляд для підтягнутості та чистоти шкіри без подразнення.",
+    "description": "Концентрат з ретиналем 0.05%, ніацинамідом та скваланом прискорює оновлення клітин, розгладжує текстуру та мінімізує висипання.",
+    "benefits": [
+      "Зменшує зморшки та покращує еластичність",
+      "Контролює висипання та себум",
+      "Не пересушує завдяки екстракту центели та сквалану"
+    ],
+    "usage": "Використовуйте 2-3 рази на тиждень ввечері після очищення. Обов'язково наносіть SPF вранці.",
+    "isFeatured": false
+  }
+]
