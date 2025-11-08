@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+}
+
+main {
+  @apply flex-1;
+}
+
+a {
+  @apply text-primary transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-primary-soft;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  }
+}
