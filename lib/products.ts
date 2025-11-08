@@ -1,7 +1,10 @@
 import productsData from "@/data/products.json";
 import { Product } from "@/types/product";
 
-const products = productsData as Product[];
+const products = (productsData as Product[]).map((product) => ({
+  currency: "UAH",
+  ...product,
+}));
 
 export function getProducts(): Product[] {
   return products;

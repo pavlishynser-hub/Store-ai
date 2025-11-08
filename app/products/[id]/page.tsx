@@ -23,15 +23,20 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
     };
   }
 
-  const description = product.shortDescription ?? product.description;
-  const gallery = product.gallery ?? (product.image ? [product.image] : []);
+  const description =
+    product.shortDescription ??
+    product.description ??
+    "Косметичний засіб Aurora Beauty з доставкою по Україні.";
+  const gallery = (
+    product.gallery && product.gallery.length > 0 ? product.gallery : [product.image]
+  ).filter(Boolean) as string[];
 
   return {
-    title: product.name,
-    description: description,
+    title: `${product.name} | Aurora Beauty`,
+    description,
     openGraph: {
       title: product.name,
-      description: description,
+      description,
       images: gallery.map((url) => ({
         url,
         width: 1200,
@@ -41,7 +46,7 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
     twitter: {
       card: "summary_large_image",
       title: product.name,
-      description: description,
+      description,
     },
   };
 }
@@ -53,7 +58,9 @@ export default function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  const gallery = product.gallery ?? (product.image ? [product.image] : []);
+  const gallery = (
+    product.gallery && product.gallery.length > 0 ? product.gallery : [product.image]
+  ).filter(Boolean) as string[];
   const [primaryImage, ...secondaryImages] = gallery;
 
   return (
@@ -93,54 +100,64 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
         <div className="space-y-8">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
-              {product.brand}
-            </p>
+            {product.brand && (
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+                {product.brand}
+              </p>
+            )}
             <h1 className="text-3xl font-semibold tracking-tight text-primary md:text-4xl">
               {product.name}
             </h1>
             <div className="flex items-center gap-3">
               <Price amount={product.price} currency={product.currency} />
             </div>
+            {product.shortDescription && (
+              <p className="text-sm text-slate-500">{product.shortDescription}</p>
+            )}
           </div>
 
-            {product.description && (
+          {product.description && (
+            <div className="space-y-3">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Опис
+              </h2>
               <p className="text-base text-slate-600">{product.description}</p>
-            )}
+            </div>
+          )}
 
-            {product.benefits && product.benefits.length > 0 && (
-              <div className="space-y-4 rounded-3xl border border-accent-dark/50 bg-accent px-6 py-5">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-                  Переваги
-                </h2>
-                <ul className="space-y-2 text-sm text-slate-600">
-                  {product.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          {product.benefits && product.benefits.length > 0 && (
+            <div className="space-y-4 rounded-3xl border border-accent-dark/50 bg-accent px-6 py-5">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Ключові переваги
+              </h2>
+              <ul className="space-y-2 text-sm text-slate-600">
+                {product.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-2">
+                    <span className="mt-1 block h-1.5 w-1.5 rounded-full bg-primary" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-            {product.usage && (
-              <div className="space-y-3 rounded-3xl border border-accent-dark/40 bg-white px-6 py-5 shadow-soft">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-                  Як використовувати
-                </h2>
-                <p className="text-sm text-slate-600">{product.usage}</p>
-              </div>
-            )}
+          {product.usage && (
+            <div className="space-y-3 rounded-3xl border border-accent-dark/40 bg-white px-6 py-5 shadow-soft">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+                Як використовувати
+              </h2>
+              <p className="text-sm text-slate-600">{product.usage}</p>
+            </div>
+          )}
 
-            <a
-              href={product.promLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="buy-button w-full md:w-auto"
-            >
-              Купити на Prom.ua
-            </a>
+          <a
+            href={product.promLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="buy-button w-full md:w-auto"
+          >
+            Купити на Prom.ua
+          </a>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getProductIds } from "@/lib/products";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aurorabeauty.example";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -27,18 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/cart`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.4,
-    },
-    {
-      url: `${siteUrl}/checkout`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.6,
     },
     ...productEntries,
   ];

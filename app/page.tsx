@@ -68,7 +68,7 @@ export default function Home() {
               <div className="absolute -inset-12 hidden rounded-full bg-accent/60 blur-3xl md:block" />
               <div className="relative overflow-hidden rounded-[2.5rem] border border-accent-dark/40 bg-white shadow-soft">
                 <Image
-                    src={heroProduct.image}
+                  src={heroProduct.image}
                   alt={heroProduct.name}
                   width={640}
                   height={800}

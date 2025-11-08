@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="uk">
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-background`}
       >

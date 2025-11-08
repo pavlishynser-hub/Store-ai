@@ -39,9 +39,9 @@ export function ProductCard({ product }: ProductCardProps) {
               {product.name}
             </Link>
           </h3>
-            <p className="mt-1 text-sm text-slate-500">
-              {product.shortDescription ?? product.description}
-            </p>
+          <p className="mt-1 text-sm text-slate-500">
+            {product.shortDescription ?? product.description}
+          </p>
         </div>
 
         <div className="mt-auto flex items-center justify-between">

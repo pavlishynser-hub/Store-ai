@@ -1,62 +1,64 @@
-## Aurora Cosmetics – Next.js 14 Storefront
+## Aurora Beauty — Next.js 14 + Prom.ua Storefront
 
-A minimalist cosmetics storefront built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, **App Router**, **Zustand** cart state, and **Stripe Checkout** (test mode). The catalog showcases three hero products from Allies of Skin and Medik8 with a fully responsive product experience (home, listing, detail pages) and a persistent client-side cart.
+Україномовний інтернет-магазин доглядової косметики, зібраний на **Next.js 14**, **TypeScript** та **Tailwind CSS**. Платіжна логіка винесена на маркетплейс **Prom.ua**: кожна картка товару містить пряме посилання «Купити на Prom.ua».
 
-### ✨ Features
-- App Router architecture with typed server and client features.
-- Home hero, featured spotlight, and full product grid.
-- `/products` listing with responsive 3 / 2 / 1 column layout.
-- `/products/[id]` detail page featuring gallery, description, ingredients, usage, and quick add-to-cart.
-- Persistent cart powered by Zustand + `localStorage`, surfaced in the header, `/cart`, and checkout.
-- Checkout page that initializes a Stripe Checkout Session using sandbox keys.
-- REST API route at `/api/products` backed by `data/products.json`.
-- SEO metadata, Open Graph/Twitter cards, and auto-generated sitemap (`/sitemap.xml`).
-- Tailwind-driven aesthetic with white space, soft shadows, and rounded geometry—deploy-ready for Vercel.
+### ✨ Основні можливості
+- App Router архітектура зі статичним рендерингом сторінок.
+- Головна сторінка з геро-блоком, підбіркою рекомендацій і повним каталогом.
+- `/products` — каталог із адаптивною сіткою (3 / 2 / 1 колонки).
+- `/products/[id]` — картка товару з галереєю, описом, перевагами та CTA-посиланням на Prom.ua.
+- API-роут `/api/products` віддає дані з `data/products.json` (кешуються на рівні збірки).
+- Оновлені SEO-метатеги (title, description, keywords, OpenGraph, Twitter), українська локаль, карта сайту `/sitemap.xml`.
 
-### 🛠 Prerequisites
-- Node.js ≥ 18.17
-- npm ≥ 9
-- Stripe test account (for generating API keys)
+### 🗃 Дані про товари
+Редагуйте файл `data/products.json`. Для кожного товару доступні поля:
 
-### ⚙️ Environment Variables
-Create a `.env.local` file based on the template below:
-
-```bash
-STRIPE_SECRET_KEY=sk_test_***
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_***
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```json
+{
+  "id": "glow-serum-vitamin-c",
+  "name": "Освітлююча сироватка з вітаміном С",
+  "price": 1899,
+  "currency": "UAH",
+  "image": "https://....jpg",
+  "gallery": ["https://....jpg"],
+  "promLink": "https://prom.ua/...",
+  "brand": "Aurum Lab",
+  "shortDescription": "Щоденна сироватка...",
+  "description": "Повний опис...",
+  "benefits": ["Перевага 1", "Перевага 2"],
+  "usage": "Як застосовувати...",
+  "isFeatured": true
+}
 ```
 
-- `STRIPE_SECRET_KEY` is used server-side by `/api/checkout`.
-- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is required to redirect to Stripe Checkout from the client.
-- `NEXT_PUBLIC_SITE_URL` is used for metadata, checkout success/cancel URLs, and sitemap links.
+Обов’язкові поля: `id`, `name`, `price`, `image`, `promLink`. Решта — опціональні та відображаються лише за наявності.
 
-> The application ships with Stripe in test mode. Use card number `4242 4242 4242 4242` with any future expiry and CVC.
+### ⚙️ Налаштування
+Єдина змінна середовища, яку можна додати (опційно) у `.env.local`:
 
-### 🚀 Local Development
+```bash
+NEXT_PUBLIC_SITE_URL=https://aurorabeauty.example
+```
+
+Використовується для генерації абсолютних URL у метаданих і sitemap. Без змінної застосунок працює з локальним `http://localhost:3000`.
+
+### 🚀 Запуск локально
 ```bash
 npm install
 npm run dev
 ```
-Visit `http://localhost:3000` to browse the storefront.
+Переходьте на `http://localhost:3000` і переконайтеся, що кнопки «Купити на Prom.ua» ведуть на потрібні сторінки маркетплейса.
 
-### 🧪 Testing Stripe Locally
-1. Ensure test keys are present in `.env.local`.
-2. Add products to the cart and proceed to `/checkout`.
-3. Submit the form to be redirected to Stripe’s test checkout.
-4. After confirming the payment with a test card, you’ll return to the configured success URL.
+### 📂 Структура
+- `app/` — сторінки (App Router) та API.
+- `components/` — UI-компоненти (шапка, футер, карточки тощо).
+- `data/` — JSON із товарами.
+- `lib/` — хелпери для роботи з даними.
+- `types/` — типи TypeScript.
 
-### 🗂 Project Structure Highlights
-- `app/` – App Router routes (home, products, product details, cart, checkout) plus API routes.
-- `components/` – UI building blocks: header, footer, product cards, grids, cart/checkout UI, and cart interactions.
-- `store/` – Zustand store for cart state (persisted to `localStorage`).
-- `data/products.json` – Cosmetic product seed data used across pages and API routes.
-- `lib/` – Domain helpers for accessing product data.
-
-### 📦 Deployment
-The project is Vercel-ready out of the box:
+### 📦 Білд і деплой
 ```bash
 npm run build
 npm run start
 ```
-Set the same environment variables in your deployment platform to enable Stripe Checkout and correct domain URLs.
+Проєкт готовий до розгортання на Vercel або іншій платформі без додаткової платіжної інтеграції. Не забудьте оновити `NEXT_PUBLIC_SITE_URL` у налаштуваннях оточення для коректних посилань у метаданих.

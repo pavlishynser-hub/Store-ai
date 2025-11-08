@@ -42,6 +42,26 @@ export default function ProductsPage() {
         title="Уся косметика"
         subtitle="Бестселери та новинки, які можна придбати на Prom.ua в один клік."
       />
+
+      <section
+        id="prom-guide"
+        className="container my-16 rounded-3xl border border-accent-dark/60 bg-white p-8 shadow-soft md:p-12"
+      >
+        <h2 className="text-2xl font-semibold text-primary md:text-3xl">
+          Як оформити замовлення через Prom.ua
+        </h2>
+        <ol className="mt-6 space-y-3 text-sm text-slate-600 md:text-base">
+          <li>
+            1. Оберіть засіб у каталозі та натисніть кнопку
+            <span className="mx-2 inline-flex items-center justify-center rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase text-primary">
+              Купити на Prom.ua
+            </span>
+          </li>
+          <li>2. Ви перейдете на офіційну сторінку товару на маркетплейсі Prom.ua.</li>
+          <li>3. Додайте товар у кошик Prom.ua та підтвердьте замовлення, вказавши контактні дані.</li>
+          <li>4. Оберіть зручну службу доставки та спосіб оплати — Prom.ua захищає кожну угоду.</li>
+        </ol>
+      </section>
     </>
   );
 }
